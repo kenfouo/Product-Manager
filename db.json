@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Computer",
+      "price": "4300",
+      "quantity": "600",
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": "2",
+      "name": "Printer",
+      "price": "300",
+      "quantity": "100",
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": "3",
+      "name": "Smartphone",
+      "price": "1200",
+      "quantity": "100",
+      "selected": false,
+      "available": true
+    },
+    {
+      "name": "neeee",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": "jJdrqSc"
+    },
+    {
+      "name": "oidjalkq;xd",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": "lpLm-LG"
+    },
+    {
+      "name": "Fer à repasser",
+      "price": "20000",
+      "quantity": "100",
+      "selected": true,
+      "available": true,
+      "id": "V9LZfAD"
+    },
+    {
+      "name": "Recoverit",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": "bhkieW4"
+    },
+    {
+      "name": "recuve",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": "BhTS9vy"
+    }
+  ]
+}

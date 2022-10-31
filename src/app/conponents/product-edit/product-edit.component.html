@@ -1,0 +1,53 @@
+<div class="container" *ngIf="productFormGroup">
+    <form class="col-4" [formGroup]="productFormGroup" >
+        <div class="form-group">
+            <input type="text" class="form-control" hidden formControlName="id" name="name">
+        </div>
+
+        <div class="form-group">
+            <label >Name</label>
+            <input type="text" class="form-control" formControlName="name" name="name"
+                [ngClass]="{'is-invalid':submited && productFormGroup.get('name')?.invalid || (productFormGroup.get('name')?.dirty && productFormGroup.get('name')?.touched)}">
+            <div *ngIf="submited && productFormGroup.get('name')?.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.get('name')?.hasError('required')">Name is Required</div>
+            </div>    
+        </div>
+        
+        <div class="form-group">
+            <label >Price</label>
+            <input type="text" class="form-control" formControlName="price"
+                [ngClass]="{'is-invalid':submited && productFormGroup.get('price')?.invalid}">
+            <div *ngIf="submited && productFormGroup.get('price')?.errors" class="invalid-feedback}">
+                <div *ngIf="productFormGroup.get('name')?.hasError('required')">Name is Required</div>
+            </div>  
+        </div>
+        <div class="form-group">
+            <label >Quantity</label>
+            <input type="text" class="form-control" formControlName="quantity"
+                [ngClass]="{'is-invalid':submited && productFormGroup.get('quantity')?.invalid}">
+            <div *ngIf="submited && productFormGroup.get('quantity')?.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.get('quantity')?.hasError('required')">Name is Required</div>
+            </div>  
+        </div>
+        
+        <div class="form-group">
+            <label >Selected</label>
+            <input type="checkbox" class="form-check" formControlName="selected"
+                [ngClass]="{'is-invalid':submited && productFormGroup.get('selected')?.invalid}">
+            <div *ngIf="submited && productFormGroup.get('name')?.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.get('name')?.hasError('required')">Name is Required</div>
+            </div>  
+        </div>
+        
+        <div class="form-group">
+            <label >Available</label>
+            <input type="checkbox" class="form-check" formControlName="available"
+                [ngClass]="{'is-invalid':submited && productFormGroup.get('available')?.invalid}">
+            <div *ngIf="submited && productFormGroup.get('available')?.errors" class="invalid-feedback">
+                <div *ngIf="productFormGroup.get('available')?.hasError('required')">Name is Required</div>
+            </div>  
+        </div>
+        <button class="btn btn-success" (click)="onUpdateProduct()" [disabled]="productFormGroup.invalid">Save</button>
+    </form>
+</div>
+
