@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
   //products?:Product[]; //---avec subscribe()
   products$?:Observable<AppDataState<Product[]>>;
   readonly DataStateEnum = DataStateEnum;
+  keyword!:string;
 
   constructor(private productService:productsService, private router:Router) { }
  
@@ -35,9 +36,9 @@ export class ProductsComponent implements OnInit {
 
 /* //---getAllProducts avec subscribe
   OngetAllProducts(){
-    this.productService.getAllProducts().subscribe(data=>{
+    this.productService.getAllProducts().subscribe(data=>{ 
       this.products = data;
-    },err=>{
+    },err=>{ 
       console.error(err);
       
     });
@@ -60,9 +61,9 @@ export class ProductsComponent implements OnInit {
         catchError(err=>of({dataState: DataStateEnum.ERROR,errorMessage:err.message}))
       );
   }
-
-  onSearche(dataForm:any) {
-    this.products$ = this.productService.searcheProducts(dataForm.keyword)
+  
+  onSearche() {
+    this.products$ = this.productService.searcheProducts(this.keyword)
     .pipe(
       map(data=>{ console.log(data);
        return ({ dataState: DataStateEnum.LOADED,data:data})}),
@@ -70,7 +71,7 @@ export class ProductsComponent implements OnInit {
       catchError(err=>of({dataState: DataStateEnum.ERROR,errorMessage:err.message}))
     );
   }
-
+     
   onSelect(p:Product){
     this.productService.SelectProducts(p)
       .subscribe(data=>{p.selected = data.selected});

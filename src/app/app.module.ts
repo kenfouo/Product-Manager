@@ -27,7 +27,7 @@ import { ProductEditComponent } from './conponents/product-edit/product-edit.com
     HttpClientModule,   //---Ici on impoerte le service HttpClientModule, il sera au rouge jusqu'a ce qu'on ajoute l'import:import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
