@@ -1,0 +1,20 @@
+<tr *ngIf="product">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.selected}}</td>
+    <td>{{product.available}}</td>
+    <td>
+        <button (click)="onSelect(product)" [ngClass]="product.selected?'btn-outline-success':'btn-outline-danger'" class="btn btn-sm">
+            <span *ngIf="product.selected">Unselected</span>
+            <span *ngIf="!product.selected">Selected</span>
+        </button>
+    </td>
+    <td>
+        <button (click)="onDelete(product)" class="btn btn-outline-danger btn-sm"><span class="bi bi-trash"></span></button>
+    </td>
+    <td>
+        <button (click)="onEditeProduct(product)" class="btn btn-outline-danger btn-sm"><span class="bi bi-pencil-square"></span></button>
+    </td>
+</tr>

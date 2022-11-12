@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { catchError, map, Observable, of, startWith } from 'rxjs';
 import { Product } from 'src/app/model/product.model';
 import { productsService } from 'src/app/servicies/products.service';
-import { AppDataState, DataStateEnum } from 'src/app/state/product.state';
+import { ActionEvent, AppDataState, DataStateEnum, ProductActionType } from 'src/app/state/product.state';
 
 @Component({
   selector: 'app-products',
@@ -26,7 +26,6 @@ export class ProductsComponent implements OnInit {
     this.products$ = this.productService.getAllProducts()
       .pipe(
         map(data=>{ 
-          console.log(typeof data[0].selected);
           return ({ dataState: DataStateEnum.LOADED,data:data})
         }),
         startWith({dataState: DataStateEnum.LOADING}),
@@ -62,8 +61,8 @@ export class ProductsComponent implements OnInit {
       );
   }
   
-  onSearche() {
-    this.products$ = this.productService.searcheProducts(this.keyword)
+  OnSearch(keyword:any) {
+    this.products$ = this.productService.searcheProducts(keyword)
     .pipe(
       map(data=>{ console.log(data);
        return ({ dataState: DataStateEnum.LOADED,data:data})}),
@@ -91,6 +90,25 @@ export class ProductsComponent implements OnInit {
   }
 
   onEditeProduct(p:Product){
+    console.log(' p',p);
+    
     this.router.navigateByUrl("/editProduct/"+p.id);
+  }
+
+  onActionEvent($event: ActionEvent) {
+    switch ($event.type) {
+      case ProductActionType.GET_ALL_PRODUCTS:this.OngetAllProducts();break;
+      case ProductActionType.GET_SELECTED_PRODUCTS:this.OngetSelectedProducts();break;
+      case ProductActionType.GET_AVAILABLE_PRODUCTS:this.OngetAvailableProducts();break;
+      case ProductActionType.NEW_PRODUCTS:this.onNewProduct();break;
+      case ProductActionType.SEARCH_PRODUCTS:this.OnSearch($event.payload);break;
+      case ProductActionType.DELETE_PRODUCT:this.onDelete($event.payload);break;
+      case ProductActionType.SELECT_PRODUCT:this.onSelect($event.payload);break;
+      case ProductActionType.EDIT_PRODUCT:this.onEditeProduct($event.payload);break;
+    
+      default:
+        break;
+    }
+    //throw new Error('Method not implemented.');
   }
 }
