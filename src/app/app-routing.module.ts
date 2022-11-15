@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'Home', component:HomeComponent},
   {path:'newProduct', component:ProductAddComponent},
   {path:'editProduct/:id', component:ProductEditComponent},
-  {path:'',redirectTo: 'Home'},
+  {path:'', component:HomeComponent},
+  // {path:'',redirectTo: 'Home'},
 ];
 
 @NgModule({

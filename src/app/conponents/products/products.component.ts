@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { catchError, map, Observable, of, startWith } from 'rxjs';
 import { Product } from 'src/app/model/product.model';
 import { productsService } from 'src/app/servicies/products.service';
+import { EventDriverService } from 'src/app/state/event.driver.service';
 import { ActionEvent, AppDataState, DataStateEnum, ProductActionType } from 'src/app/state/product.state';
 
 @Component({
@@ -11,14 +12,21 @@ import { ActionEvent, AppDataState, DataStateEnum, ProductActionType } from 'src
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  //products?:Product[]; //---avec subscribe()
+  products?:Product[]; //---avec subscribe()
   products$?:Observable<AppDataState<Product[]>>;
   readonly DataStateEnum = DataStateEnum;
   keyword!:string;
 
-  constructor(private productService:productsService, private router:Router) { }
+  constructor(
+              private productService:productsService, 
+              private router:Router,
+              private eventDriverService: EventDriverService
+              ) { }
  
   ngOnInit(): void {
+    this.eventDriverService.sourceEventSubjectObservable.subscribe((actionEvent:ActionEvent)=>{
+      this.onActionEvent(actionEvent);
+    })
     this.OngetAllProducts();
   }
 

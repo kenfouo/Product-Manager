@@ -11,7 +11,8 @@ export class productsService {
 
     //---Get All Products
     getAllProducts():Observable<Product[]>{
-        let host = (Math.random()>0.5) ? environment.host: environment.unreachableHost;
+        //let host = (Math.random()>0.5) ? environment.host: environment.unreachableHost;
+        let host = environment.host;
         return this.http.get<Product[]>(host+'products');
     }
 

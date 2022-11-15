@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Computer",
       "price": "4300",
       "quantity": "600",
@@ -9,15 +9,15 @@
       "available": true
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Printer",
       "price": "300",
       "quantity": "100",
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Smartphone",
       "price": "1200",
       "quantity": "100",
@@ -25,28 +25,12 @@
       "available": true
     },
     {
-      "name": "neeee",
+      "name": "AnyRecover",
       "price": 0,
       "quantity": 0,
-      "selected": true,
+      "selected": false,
       "available": true,
-      "id": "jJdrqSc"
-    },
-    {
-      "name": "Fer à repasser",
-      "price": "20000",
-      "quantity": "100",
-      "selected": true,
-      "available": true,
-      "id": "V9LZfAD"
-    },
-    {
-      "name": "Recoverit",
-      "price": 0,
-      "quantity": 0,
-      "selected": true,
-      "available": true,
-      "id": "bhkieW4"
+      "id": 4
     },
     {
       "name": "recuve",
@@ -54,7 +38,31 @@
       "quantity": 0,
       "selected": true,
       "available": true,
-      "id": "BhTS9vy"
+      "id": 5
+    },
+    {
+      "name": "Recoverit",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 6
+    },
+    {
+      "name": "Recuva®",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 7
+    },
+    {
+      "name": "tenorshare",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 8
     }
   ]
 }
