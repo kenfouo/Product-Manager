@@ -5,7 +5,7 @@
       "name": "Computer",
       "price": "4300",
       "quantity": "600",
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -13,7 +13,7 @@
       "name": "Printer",
       "price": "300",
       "quantity": "100",
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -25,20 +25,20 @@
       "available": true
     },
     {
+      "id": 4,
       "name": "AnyRecover",
       "price": 0,
       "quantity": 0,
       "selected": false,
-      "available": true,
-      "id": 4
+      "available": true
     },
     {
+      "id": 5,
       "name": "recuve",
       "price": 0,
       "quantity": 0,
-      "selected": true,
-      "available": true,
-      "id": 5
+      "selected": false,
+      "available": true
     },
     {
       "name": "Recoverit",
@@ -63,6 +63,14 @@
       "selected": true,
       "available": true,
       "id": 8
+    },
+    {
+      "name": "tenorshare",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 9
     }
   ]
 }

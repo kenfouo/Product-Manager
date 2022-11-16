@@ -12,7 +12,7 @@ import { ActionEvent, AppDataState, DataStateEnum, ProductActionType } from 'src
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products?:Product[]; //---avec subscribe()
+  //products?:Product[]; //---avec subscribe()
   products$?:Observable<AppDataState<Product[]>>;
   readonly DataStateEnum = DataStateEnum;
   keyword!:string;

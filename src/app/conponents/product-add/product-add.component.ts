@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators , FormControlName} from '@angular/forms';
 import { productsService } from 'src/app/servicies/products.service';
@@ -16,7 +17,8 @@ export class ProductAddComponent implements OnInit {
   constructor(
     private fb:FormBuilder, 
     private productService:productsService,
-    private eventDriverService:EventDriverService
+    private eventDriverService:EventDriverService,
+    private _location: Location
     ) { }
 
   ngOnInit(): void { 
@@ -34,7 +36,7 @@ export class ProductAddComponent implements OnInit {
     this.productService.SaveProduct(this.productFormGroup?.value).
     subscribe(data=>{
         this.eventDriverService.publishEvent({type:ProductActionType.PRODUCT_ADDED})
-        alert("success");
+        this._location.back();
       })
   }
 

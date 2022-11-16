@@ -3,18 +3,18 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.quantity}}</td>
-    <td><span [ngClass]="product.selected?'bi-trash text-success':'bi-pencil-square text-danger'" class="bi"></span></td>
-    <td><span [ngClass]="product.available? 'bi-trash text-success' : 'bi-pencil-square  text-danger'" class="bi"></span></td>
+    <td><span [ngClass]="product.selected?'bi-check2-square text-success':'bi-square text-danger'" class="bi"></span></td>
+    <td><span [ngClass]="product.available? 'bi-check2-square text-success' : 'bi-square  text-danger'" class="bi"></span></td>
     <td>
-        <button (click)="onSelect(product)" [ngClass]="product.selected?'btn-outline-success':'btn-outline-danger'" class="btn btn-sm">
+        <button (click)="onSelect(product)" [ngClass]="product.selected?'btn text-white bg-success':'btn text-white bg-danger'" class="btn btn-sm">
             <span *ngIf="product.selected">Unselected</span>
             <span *ngIf="!product.selected">Selected</span>
         </button>
     </td>
     <td>
-        <button (click)="onDelete(product)" class="btn btn-outline-danger btn-sm"><span class="bi bi-trash"></span></button>
+        <button (click)="onDelete(product)" class="btn text-white bg-danger btn-sm"><span class="bi bi-trash"></span></button>
     </td>
     <td>
-        <button (click)="onEditeProduct(product)" class="btn btn-outline-danger btn-sm"><span class="bi bi-pencil-square"></span></button>
+        <button (click)="onEditeProduct(product)" class="btn  text-white bg-danger btn-sm"><span class="bi bi-pencil-square"></span></button>
     </td>
 </tr>
